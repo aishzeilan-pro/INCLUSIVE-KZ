@@ -1,196 +1,178 @@
+
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>INCLUSIVE KZ — Инклюзивті білім беру платформасы</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INCLUSIVE KZ | Инклюзивті білім</title>
 <style>
-:root{--green:#236b50;--green2:#e9f4ee;--ink:#1d3029;--muted:#66766f;--line:#e3eae6;--bg:#f6f9f7;--white:#fff;--orange:#f0a85b;--shadow:0 12px 35px #173b2b0d}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,-apple-system,Segoe UI,sans-serif}body.large{font-size:18px}body.high{--bg:#fff;--ink:#000;--muted:#222;--line:#555;--green:#003d24;--green2:#e6ffe9}button,input,select,textarea{font:inherit}button{cursor:pointer}.shell{display:grid;grid-template-columns:248px 1fr;min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--line);padding:25px 16px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;gap:10px;align-items:center;padding:0 9px 25px}.logo{width:40px;height:40px;border-radius:14px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:21px}.brand strong{font-size:17px;letter-spacing:.7px}.brand small{display:block;color:var(--muted);font-size:11px}.nav-label{font-size:10px;font-weight:800;color:#9aa7a0;letter-spacing:1.2px;padding:14px 11px 7px}.nav button{border:0;background:transparent;width:100%;text-align:left;padding:11px;border-radius:11px;color:#52635b;display:flex;gap:11px;align-items:center;margin:2px 0}.nav button:hover,.nav button.active{background:var(--green2);color:var(--green);font-weight:700}.nav .ico{width:22px;text-align:center}.side-note{margin:24px 5px;padding:14px;border-radius:14px;background:#f2f7f4;color:var(--muted);font-size:12px}.main{min-width:0}.topbar{height:72px;background:#ffffffeb;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.crumb{font-weight:750}.top-actions{display:flex;gap:8px;align-items:center}.iconbtn,.softbtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 11px;color:var(--ink)}.softbtn{font-size:13px}.profile{width:34px;height:34px;border-radius:50%;background:#e6f2eb;color:var(--green);display:grid;place-items:center;font-weight:800}.content{max-width:1220px;margin:auto;padding:30px 34px 60px}.view{display:none}.view.active{display:block}.eyebrow{color:var(--green);font-size:11px;font-weight:850;letter-spacing:1.3px;text-transform:uppercase}.hero{background:linear-gradient(115deg,#174e3b,#2f8060);color:#fff;border-radius:24px;padding:34px;display:grid;grid-template-columns:1.4fr .8fr;gap:20px;overflow:hidden;position:relative}.hero h1{font-size:clamp(27px,4vw,43px);line-height:1.13;margin:10px 0 14px;max-width:650px}.hero p{color:#e2f1e9;max-width:620px}.hero .eyebrow{color:#bce3cd}.hero-art{align-self:center;justify-self:center;font-size:105px;filter:drop-shadow(0 12px 18px #102c20aa)}.btn{border:0;border-radius:11px;padding:11px 16px;background:var(--green);color:white;font-weight:700}.btn.light{background:white;color:var(--green)}.btn.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}.btn.small{padding:7px 11px;font-size:13px}.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #efa94f;outline-offset:2px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:29px 0 16px}.section-head h2{margin:3px 0;font-size:23px}.muted{color:var(--muted)}.grid{display:grid;gap:15px}.stats{grid-template-columns:repeat(4,1fr)}.stat,.panel,.tile,.resource,.grade-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat strong{display:block;font-size:28px;margin:8px 0 2px}.stat small{color:var(--muted)}.stat .bubble{background:var(--green2);color:var(--green);border-radius:10px;padding:7px}.two{grid-template-columns:1.2fr .8fr}.three{grid-template-columns:repeat(3,1fr)}.panel h3{margin:0 0 12px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{cursor:pointer;transition:.18s}.tile:hover,.grade-card:hover{transform:translateY(-2px);border-color:#9cc6ad}.tile .big{font-size:27px}.tile b{display:block;margin:7px 0 3px}.tile small{color:var(--muted)}.grade-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.grade-card{text-align:center;cursor:pointer;padding:14px 7px;box-shadow:none}.grade-card strong{font-size:24px;display:block}.grade-card span{font-size:12px;color:var(--muted)}.grade-card.active{background:var(--green);color:white;border-color:var(--green)}.grade-card.active span{color:#e4f1e9}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.field{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 12px;color:var(--ink);min-width:160px}.field.grow{flex:1;min-width:220px}.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.resource{box-shadow:none}.resource .r-icon{font-size:27px}.tag{display:inline-block;background:var(--green2);color:var(--green);border-radius:30px;padding:4px 9px;font-size:11px;font-weight:750}.resource h3{font-size:16px;margin:10px 0 5px}.resource p{font-size:13px;color:var(--muted);min-height:40px}.resource-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:12px}.linkbtn{border:0;background:none;color:var(--green);font-weight:800}.quiz-option{display:block;width:100%;text-align:left;padding:12px;border:1px solid var(--line);background:#fff;border-radius:11px;margin:8px 0}.quiz-option.selected{border-color:var(--green);background:var(--green2)}.feedback{padding:12px;border-radius:10px;margin-top:12px;background:#edf6ef}.progress{height:9px;border-radius:20px;background:#edf1ee;overflow:hidden}.progress span{display:block;height:100%;background:#42936c;border-radius:20px}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{text-align:left;padding:11px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-weight:700}.pill{border-radius:30px;padding:4px 9px;background:#eef5f0;color:var(--green);font-size:11px;font-weight:700}.notice{padding:14px;border-radius:13px;background:#fff7e9;color:#77521f;font-size:13px;margin:14px 0}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.formrow{display:flex;flex-direction:column;gap:6px}.formrow label{font-size:12px;font-weight:750;color:var(--muted)}textarea.field{min-height:100px;resize:vertical}.modal{display:none;position:fixed;inset:0;background:#0d2119a6;z-index:20;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-card{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:85vh;overflow:auto;padding:25px}.modal-head{display:flex;justify-content:space-between;gap:12px}.close{border:0;background:#f1f4f2;border-radius:9px;padding:6px 11px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}.empty{padding:25px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:14px}.hidden{display:none!important}
-@media(max-width:980px){.shell{grid-template-columns:205px 1fr}.stats{grid-template-columns:repeat(2,1fr)}.resource-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr .35fr}.hero-art{font-size:70px}}
-@media(max-width:700px){.shell{display:block}.sidebar{height:auto;position:relative;padding:12px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:4px 8px 10px}.nav{display:flex;overflow:auto;gap:4px}.nav-label,.side-note{display:none}.nav button{white-space:nowrap;width:auto;padding:9px;font-size:12px}.nav .ico{display:none}.topbar{height:58px;padding:0 15px}.content{padding:20px 15px 40px}.hero{padding:24px;grid-template-columns:1fr}.hero-art{display:none}.two,.three{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,1fr)}.grade-grid{grid-template-columns:repeat(4,1fr)}.resource-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{font-size:13px}.formgrid{grid-template-columns:1fr}.top-actions .softbtn{display:none}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7f2;color:#26372e;line-height:1.6}
+header{background:#244c3a;color:white;padding:25px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:25px;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:0 10px}
+.hero{padding:65px 8%;background:#e3eee4;text-align:center}
+.hero h1{font-size:38px;margin-bottom:15px}
+.hero p{max-width:700px;margin:auto}
+button,select{padding:12px 18px;border:0;border-radius:9px;background:#397653;color:white;cursor:pointer;font-size:15px;margin:7px}
+button:hover{background:#244c3a}
+section{padding:45px 8%}
+h2{margin-bottom:20px;color:#244c3a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;padding:23px;border-radius:15px;box-shadow:0 3px 14px #0000000d}
+.card h3{margin-bottom:10px;color:#397653}
+.card p{margin-bottom:12px}
+select{background:#397653}
+#task{margin-top:20px}
+.answer{display:block;width:100%;text-align:left;background:#e9f1e9;color:#26372e;margin:8px 0}
+.answer:hover{background:#d3e6d5}
+#result{font-weight:bold;margin-top:15px}
+.access button{background:#526e5c}
+footer{text-align:center;padding:25px;background:#244c3a;color:white}
+.progress{background:#e1e9e1;height:15px;border-radius:10px;overflow:hidden;margin:12px 0}
+.progress div{background:#397653;height:100%;width:0%;transition:.3s}
+.large{font-size:19px}
+.high-contrast{background:#111!important;color:#fff!important}
+.high-contrast .card{background:#222;color:white}
 </style>
 </head>
 <body>
-<div class="shell">
-<aside class="sidebar">
- <div class="brand"><div class="logo">✳</div><div><strong>INCLUSIVE KZ</strong><small>Бәріне қолжетімді білім</small></div></div>
- <div class="nav-label">НЕГІЗГІ БӨЛІМ</div>
- <nav class="nav" id="nav">
-  <button class="active" data-view="home"><span class="ico">⌂</span>Басты бет</button>
-  <button data-view="classes"><span class="ico">▦</span>1–11 сыныптар</button>
-  <button data-view="tasks"><span class="ico">✎</span>Интерактивті тапсырмалар</button>
-  <button data-view="needs"><span class="ico">♿</span>Ерекше қажеттіліктер</button>
-  <div class="nav-label">КАБИНЕТТЕР</div>
-  <button data-view="student"><span class="ico">🎓</span>Оқушы кабинеті</button>
-  <button data-view="teacher"><span class="ico">👩‍🏫</span>Мұғалім кабинеті</button>
-  <button data-view="parent"><span class="ico">👨‍👩‍👧</span>Ата-ана кабинеті</button>
-  <button data-view="progress"><span class="ico">▥</span>Оқу жетістіктері</button>
-  <div class="nav-label">ҚОСЫМША</div>
-  <button data-view="library"><span class="ico">▤</span>Әдістемелік кітапхана</button>
-  <button data-view="assistant"><span class="ico">✧</span>AI көмекші</button>
-  <button data-view="settings"><span class="ico">⚙</span>Баптаулар</button>
- </nav>
- <div class="side-note">💚 Әр балаға — өз мүмкіндігіне сай білім.</div>
-</aside>
-<main class="main">
-<header class="topbar"><div class="crumb" id="crumb">Басты бет</div><div class="top-actions"><button class="softbtn" onclick="toggleLarge()">A− / A+</button><button class="softbtn" onclick="toggleContrast()">◐ Контраст</button><button class="softbtn" onclick="toggleLang()" id="langBtn">ҚАЗ / РУС</button><div class="profile">І</div></div></header>
-<div class="content">
-<section class="view active" id="home">
- <div class="hero"><div><div class="eyebrow">Инклюзивті білім беру платформасы</div><h1>Әр оқушының мүмкіндігіне сай білім</h1><p>INCLUSIVE KZ — оқу материалдарын бейімдеуге, білім алуды қолдауға және оқушы жетістігін бақылауға арналған орта.</p><button class="btn light" onclick="showView('classes')">Сыныпты таңдау →</button></div><div class="hero-art">🌱📚</div></div>
- <div class="section-head"><div><div class="eyebrow">Платформа мүмкіндіктері</div><h2>Білім беру кеңістігі</h2></div><span class="muted">Демо нұсқа</span></div>
- <div class="grid stats"><div class="stat"><div class="stat-top">Оқу сыныптары <span class="bubble">▦</span></div><strong>11</strong><small>1-ден 11-сыныпқа дейін</small></div><div class="stat"><div class="stat-top">Үлгі материалдар <span class="bubble">▤</span></div><strong id="homeMaterials">22</strong><small>Әртүрлі пәндер мен деңгейлер</small></div><div class="stat"><div class="stat-top">Тапсырмалар <span class="bubble">✎</span></div><strong>4+</strong><small>Интерактивті жаттығулар</small></div><div class="stat"><div class="stat-top">Қолжетімділік <span class="bubble">♿</span></div><strong>24/7</strong><small>Қолдау құралдары қолжетімді</small></div></div>
- <div class="section-head"><div><div class="eyebrow">Жылдам өту</div><h2>Қажетті бөлімді таңдаңыз</h2></div></div>
- <div class="quick">
-  <div class="tile" onclick="showView('classes')"><div class="big">📚</div><b>Сынып материалдары</b><small>1–11 сыныпқа арналған</small></div>
-  <div class="tile" onclick="showView('tasks')"><div class="big">🧩</div><b>Интерактивті тапсырмалар</b><small>Тест, сәйкестендіру, жаттығу</small></div>
-  <div class="tile" onclick="showView('needs')"><div class="big">♿</div><b>Қолжетімді орта</b><small>Оқу ерекшелігіне қарай бейімдеу</small></div>
-  <div class="tile" onclick="showView('teacher')"><div class="big">👩‍🏫</div><b>Мұғалім кабинеті</b><small>Тапсырма және жоспар</small></div>
-  <div class="tile" onclick="showView('progress')"><div class="big">📊</div><b>Оқу жетістіктері</b><small>Нәтиже мен ілгерілеу</small></div>
-  <div class="tile" onclick="showView('assistant')"><div class="big">✨</div><b>AI көмекші</b><small>Материалды бейімдеу үлгісі</small></div>
- </div>
- <div class="notice">Ескерту: бұл — браузерде жұмыс істейтін демонстрациялық прототип. Нақты аккаунттар, серверде дерек сақтау және AI API интеграциясы әзірге қосылмаған.</div>
-</section>
 
-<section class="view" id="classes">
- <div class="eyebrow">Оқу материалдары</div><h2>Сыныпты таңдаңыз</h2><p class="muted">Әр сыныптың пәндері мен бейімделген тапсырмалары бөлек көрсетіледі.</p>
- <div class="grade-grid" id="gradeGrid"></div>
- <div class="section-head"><div><div class="eyebrow" id="classEyebrow">1-СЫНЫП</div><h2 id="classTitle">1-сынып материалдары</h2></div><span class="pill" id="classCount">2 материал</span></div>
- <div class="toolbar"><input class="field grow" id="classSearch" placeholder="Материал атауын іздеу..."><select class="field" id="classSubject"><option value="all">Барлық пәндер</option><option>Информатика</option><option>Математика</option><option>Қазақ тілі</option><option>Дүниетану</option></select><select class="field" id="classType"><option value="all">Барлық түрі</option><option>Көрнекілік</option><option>Жеңілдетілген мәтін</option><option>Тапсырма</option></select></div>
- <div class="resource-grid" id="classResources"></div>
-</section>
+<header>
+<div class="logo">INCLUSIVE KZ</div>
+<nav>
+<a href="#about">Жоба туралы</a>
+<a href="#classes">Сыныптар</a>
+<a href="#tasks">Тапсырмалар</a>
+<a href="#access">Қолжетімділік</a>
+</nav>
+</header>
 
-<section class="view" id="tasks">
- <div class="eyebrow">Ойын арқылы үйрену</div><h2>Интерактивті тапсырмалар</h2><p class="muted">Тапсырмаларды орындап, бірден кері байланыс алыңыз. Нәтиже осы браузерде сақталады.</p>
- <div class="grid two">
-  <div class="panel"><span class="tag">1-тапсырма · Математика</span><h3>Қарапайым есеп</h3><p>3 алмаға тағы 2 алма қостық. Барлығы неше алма болды?</p><div id="quiz1"><button class="quiz-option" onclick="answerQuiz(1,4,this)">4 алма</button><button class="quiz-option" onclick="answerQuiz(1,5,this)">5 алма</button><button class="quiz-option" onclick="answerQuiz(1,6,this)">6 алма</button></div><div id="feedback1"></div></div>
-  <div class="panel"><span class="tag">2-тапсырма · Информатика</span><h3>Құрылғыны сәйкестендір</h3><p>Компьютерге мәтін енгізу үшін қай құрылғы қолданылады?</p><div id="quiz2"><button class="quiz-option" onclick="answerQuiz(2,'Пернетақта',this)">Монитор</button><button class="quiz-option" onclick="answerQuiz(2,'Пернетақта',this)">Пернетақта</button><button class="quiz-option" onclick="answerQuiz(2,'Пернетақта',this)">Динамик</button></div><div id="feedback2"></div></div>
-  <div class="panel"><span class="tag">3-тапсырма · Дүниетану</span><h3>Жыл мезгілін тап</h3><p>Қар жауып, күн суытатын мезгіл:</p><div id="quiz3"><button class="quiz-option" onclick="answerQuiz(3,'Қыс',this)">Жаз</button><button class="quiz-option" onclick="answerQuiz(3,'Қыс',this)">Қыс</button><button class="quiz-option" onclick="answerQuiz(3,'Қыс',this)">Көктем</button></div><div id="feedback3"></div></div>
-  <div class="panel"><span class="tag">4-тапсырма · Қазақ тілі</span><h3>Сөзді толықтыр</h3><p>«М_ктеп» сөзіндегі түсіп қалған әріп:</p><div id="quiz4"><button class="quiz-option" onclick="answerQuiz(4,'е',this)">а</button><button class="quiz-option" onclick="answerQuiz(4,'е',this)">е</button><button class="quiz-option" onclick="answerQuiz(4,'е',this)">о</button></div><div id="feedback4"></div></div>
- </div>
- <div class="panel" style="margin-top:15px"><h3>Жеке тапсырма құрастыру</h3><p class="muted">Өзіңізге арналған шағын тапсырма мәтінін енгізіңіз.</p><div class="formgrid"><div class="formrow"><label>Пән</label><select class="field" id="customSubject"><option>Математика</option><option>Информатика</option><option>Қазақ тілі</option><option>Дүниетану</option></select></div><div class="formrow"><label>Сынып</label><select class="field" id="customGrade"></select></div><div class="formrow" style="grid-column:1/-1"><label>Тапсырма мәтіні</label><textarea class="field" id="customTask" placeholder="Тапсырманың шартын жазыңыз..."></textarea></div></div><button class="btn" onclick="addCustomTask()">Тапсырманы қосу</button><div id="customList"></div></div>
-</section>
-
-<section class="view" id="needs">
- <div class="eyebrow">Жеке қолдау</div><h2>Ерекше білім беру қажеттіліктеріне бейімдеу</h2><p class="muted">Төмендегі ұсыныстар жалпы педагогикалық қолдау мысалдары. Оқушыға қажетті нақты бейімдеуді мамандар мен ата-ананың қатысуымен анықтау керек.</p>
- <div class="grid three">
-  <div class="panel"><div class="big">👁️</div><h3>Көру арқылы қабылдауға қолдау</h3><ul><li>Ірі қаріп және анық контраст</li><li>Суретке мәтіндік сипаттама</li><li>Экраннан оқитын құралмен үйлесімділік</li><li>Материалды үлкейтуге мүмкіндік</li></ul></div>
-  <div class="panel"><div class="big">👂</div><h3>Есту арқылы қабылдауға қолдау</h3><ul><li>Аудиоға мәтіндік транскрипт</li><li>Қысқа жазбаша нұсқаулық</li><li>Маңызды ақпаратты визуалды көрсету</li><li>Субтитр қолдану</li></ul></div>
-  <div class="panel"><div class="big">🧠</div><h3>Оқу қарқыны мен түсінуге қолдау</h3><ul><li>Тапсырманы шағын қадамға бөлу</li><li>Бір уақытта бір нұсқаулық</li><li>Қосымша уақыт беру</li><li>Қайталау және үлгі көрсету</li></ul></div>
-  <div class="panel"><div class="big">🗣️</div><h3>Қарым-қатынасқа қолдау</h3><ul><li>Суретті карточкалар</li><li>Жауаптың балама тәсілдері</li><li>Қарапайым және нақты сөйлемдер</li><li>Жауап беруге жеткілікті уақыт</li></ul></div>
-  <div class="panel"><div class="big">🧩</div><h3>Зейін мен ұйымдастыруға қолдау</h3><ul><li>Қысқа оқу блоктары</li><li>Көрнекі күн тәртібі</li><li>Тапсырма кезеңдерінің тізімі</li><li>Жоспарлы үзілістер</li></ul></div>
-  <div class="panel"><div class="big">🤝</div><h3>Әлеуметтік қолдау</h3><ul><li>Құрдастарымен жұптық жұмыс</li><li>Қауіпсіз әрі қолдаушы орта</li><li>Таңдау жасау мүмкіндігі</li><li>Жетістікті мадақтау</li></ul></div>
- </div>
- <div class="notice">Маңызды: диагнозға қарап оқушының қабілетін болжауға болмайды. Бейімдеу жеке қажеттілікке, оқу мақсатына және оқушының өз қалауына сүйенуі тиіс.</div>
-</section>
-
-<section class="view" id="student">
- <div class="eyebrow">Жеке кабинет · демо</div><h2>Оқушы кабинеті</h2><p class="muted">Бұл демонстрацияда нақты оқушының жеке деректері қолданылмайды.</p>
- <div class="grid stats"><div class="stat"><div class="stat-top">Орындалған тапсырма</div><strong id="studentDone">0</strong><small>Осы браузердегі нәтиже</small></div><div class="stat"><div class="stat-top">Жинаған ұпай</div><strong id="studentPoints">0</strong><small>Дұрыс жауаптар үшін</small></div><div class="stat"><div class="stat-top">Жетістік</div><strong id="studentBadge">🌱</strong><small>Оқу жолы жалғасуда</small></div><div class="stat"><div class="stat-top">Таңдалған сынып</div><strong id="studentGrade">1</strong><small>Үлгі профиль</small></div></div>
- <div class="grid two" style="margin-top:15px"><div class="panel"><h3>Менің оқу жоспарым</h3><p>1. Күнделікті қысқа тапсырма орындау</p><p>2. Түсінбеген тақырыпты қайталау</p><p>3. Мұғаліммен нәтижені талқылау</p><button class="btn small" onclick="showView('tasks')">Тапсырма орындау</button></div><div class="panel"><h3>Оқу барысы</h3><div class="progress"><span id="studentBar" style="width:0%"></span></div><p class="muted" id="studentPercent">0% орындалды</p><p class="muted">Нәтижелер браузердің жергілікті сақтау орнында ғана сақталады.</p></div></div>
-</section>
-
-<section class="view" id="teacher">
- <div class="eyebrow">Басқару панелі · демо</div><h2>Мұғалім кабинеті</h2><p class="muted">Оқу материалдарын жоспарлау мен тапсырма үлгілерін құрастыру.</p>
- <div class="grid stats"><div class="stat"><div class="stat-top">Сыныптар</div><strong>11</strong><small>1–11 сынып</small></div><div class="stat"><div class="stat-top">Материалдар</div><strong>22</strong><small>Үлгі кітапхана</small></div><div class="stat"><div class="stat-top">Құрастырылған тапсырма</div><strong id="teacherTaskCount">0</strong><small>Осы сессияда</small></div><div class="stat"><div class="stat-top">Тексеру</div><strong>Демо</strong><small>Нақты журналға қосылмаған</small></div></div>
- <div class="panel" style="margin-top:15px"><h3>Жаңа оқу тапсырмасын құрастыру</h3><div class="formgrid"><div class="formrow"><label>Сынып</label><select class="field" id="teacherGrade"></select></div><div class="formrow"><label>Пән</label><select class="field" id="teacherSubject"><option>Информатика</option><option>Математика</option><option>Қазақ тілі</option><option>Дүниетану</option></select></div><div class="formrow"><label>Тапсырма деңгейі</label><select class="field" id="teacherLevel"><option>Жеңіл</option><option>Орташа</option><option>Күрделі</option></select></div><div class="formrow"><label>Бейімдеу түрі</label><select class="field" id="teacherAdapt"><option>Қысқа қадамдар</option><option>Көрнекілікпен</option><option>Жеңілдетілген мәтін</option><option>Қосымша уақыт</option></select></div><div class="formrow" style="grid-column:1/-1"><label>Тапсырма сипаттамасы</label><textarea class="field" id="teacherDesc" placeholder="Оқу мақсаты мен тапсырма шартын жазыңыз..."></textarea></div></div><button class="btn" onclick="createTeacherTask()">Тапсырма үлгісін сақтау</button><div id="teacherCreated"></div></div>
- <div class="panel" style="margin-top:15px"><h3>Мұғалімге арналған жұмыс реті</h3><ol><li>Оқу мақсатын анықтау.</li><li>Оқушыға қолайлы ұсыну форматын таңдау.</li><li>Тапсырманы шағын кезеңдерге бөлу.</li><li>Нәтижені бақылап, қажет болса бейімдеуді өзгерту.</li></ol></div>
-</section>
-
-<section class="view" id="parent">
- <div class="eyebrow">Отбасымен байланыс · демо</div><h2>Ата-ана кабинеті</h2><p class="muted">Баланың оқу барысын қолдауға арналған үлгі бет.</p>
- <div class="grid two"><div class="panel"><h3>Апталық оқу есебі</h3><p><b>Орындалған жұмыс:</b> <span id="parentDone">0 тапсырма</span></p><p><b>Дұрыс жауап:</b> <span id="parentPoints">0 ұпай</span></p><p><b>Ұсыныс:</b> Баланың жетістігін атап, қиындық туындаған тақырыпты бірге қайталаңыз.</p></div><div class="panel"><h3>Үйде қолдау көрсету</h3><ul><li>Тыныш әрі жайлы оқу орнын ұйымдастыру.</li><li>Тапсырманы шағын бөліктерге бөлу.</li><li>Баланың таңдауына және қарқынына құрметпен қарау.</li><li>Мұғаліммен тұрақты байланыста болу.</li></ul></div></div>
- <div class="notice">Бұл үлгі кабинетте оқушының жеке деректері немесе мектеп журналына қосылу жоқ. Нақты пайдалану үшін ата-ана келісімі мен қауіпсіз авторизация қажет.</div>
-</section>
-
-<section class="view" id="progress">
- <div class="eyebrow">Мониторинг</div><h2>Оқу жетістіктері</h2><p class="muted">Тек осы браузерде орындалған демонстрациялық тапсырмалардың нәтижесі.</p>
- <div class="grid stats"><div class="stat"><div class="stat-top">Жалпы жауап</div><strong id="progressTotal">0</strong></div><div class="stat"><div class="stat-top">Дұрыс жауап</div><strong id="progressCorrect">0</strong></div><div class="stat"><div class="stat-top">Дәлдік</div><strong id="progressAccuracy">0%</strong></div><div class="stat"><div class="stat-top">Марапат</div><strong id="progressStars">0 ⭐</strong></div></div>
- <div class="panel" style="margin-top:15px"><h3>Тапсырмалар бойынша нәтиже</h3><div id="progressRows"></div></div>
- <div class="notice">Бұл статистика оқу үлгерімін ресми бағалау немесе диагноз қою үшін арналмаған.</div>
-</section>
-
-<section class="view" id="library">
- <div class="eyebrow">Әдістемелік қолдау</div><h2>Әдістемелік кітапхана</h2><p class="muted">Мұғалім мен ата-анаға арналған қысқа нұсқаулықтар.</p>
- <div class="grid three">
-  <div class="panel"><div class="big">📘</div><h3>Сабақты бейімдеу</h3><p>Оқу мақсатын сақтай отырып, тапсырманың көлемін, нұсқауын немесе ұсыну форматын бейімдеу.</p><button class="linkbtn" onclick="openInfo('Сабақты бейімдеу','Алдымен оқу мақсатын анықтаңыз. Содан кейін нұсқауды қысқартып, бірізді қадамдарға бөліңіз. Қажет болса сурет, үлгі, қосымша уақыт немесе балама жауап тәсілін ұсыныңыз.')">Оқу →</button></div>
-  <div class="panel"><div class="big">🧩</div><h3>Деңгейлік тапсырма</h3><p>Бір оқу мақсатына жетудің бірнеше күрделілік деңгейін дайындау.</p><button class="linkbtn" onclick="openInfo('Деңгейлік тапсырма','Жеңіл деңгейде үлгімен орындау; орташа деңгейде өздігінен орындау; күрделі деңгейде жаңа жағдаятқа қолдану ұсынылады. Деңгейлер оқушыны таңбалау үшін емес, икемді қолдау үшін қолданылады.')">Оқу →</button></div>
-  <div class="panel"><div class="big">💬</div><h3>Кері байланыс</h3><p>Нақты, қолдаушы және келесі қадамды көрсететін пікір беру.</p><button class="linkbtn" onclick="openInfo('Кері байланыс','«Жақсы жұмыс!» деген жалпы пікірмен қатар, нақты жетістікті атаңыз: «Сен есептің бірінші қадамын дұрыс орындадың. Енді екінші қадамды бірге тексерейік».')">Оқу →</button></div>
-  <div class="panel"><div class="big">🗓️</div><h3>Жеке оқу жоспары</h3><p>Қысқа мерзімді мақсаттар мен қолдау тәсілдерін белгілеу.</p><button class="linkbtn" onclick="openInfo('Жеке оқу жоспары','Оқушының күшті жақтарын, оқу мақсатын, қолдау түрін, жауапты мамандарды және нәтижені қарау мерзімін белгілеңіз. Жоспарды оқушы мен ата-ананың пікірін ескеріп жаңартыңыз.')">Оқу →</button></div>
-  <div class="panel"><div class="big">🛡️</div><h3>Қауіпсіз цифрлық орта</h3><p>Оқушының деректерін қорғау және цифрлық әдепті сақтау.</p><button class="linkbtn" onclick="openInfo('Қауіпсіз цифрлық орта','Тек қажетті деректерді жинаңыз, рұқсатсыз жарияламаңыз, рөлдерге сай қолжетімділік беріңіз. Құпиясөзді қауіпсіз сақтап, ата-ананың келісімін алыңыз.')">Оқу →</button></div>
-  <div class="panel"><div class="big">🌍</div><h3>Әмбебап дизайн</h3><p>Ақпаратты бірнеше форматта ұсынып, таңдау мүмкіндігін беру.</p><button class="linkbtn" onclick="openInfo('Әмбебап дизайн','Ақпаратты мәтін, дыбыс, сурет және практикалық әрекет арқылы ұсыныңыз. Оқушыға білімін ауызша, жазбаша немесе басқа қолайлы тәсілмен көрсетуге мүмкіндік беріңіз.')">Оқу →</button></div>
- </div>
-</section>
-
-<section class="view" id="assistant">
- <div class="eyebrow">Материалды бейімдеуге көмек</div><h2>AI көмекші</h2><p class="muted">Оқу тапсырмасын жеңілдетуге арналған демонстрациялық көмекші. Нақты генеративті AI серверіне қосылмаған.</p>
- <div class="panel"><div class="formgrid"><div class="formrow"><label>Сынып</label><select class="field" id="aiGrade"></select></div><div class="formrow"><label>Пән</label><select class="field" id="aiSubject"><option>Математика</option><option>Информатика</option><option>Қазақ тілі</option><option>Дүниетану</option></select></div><div class="formrow"><label>Қажетті бейімдеу</label><select class="field" id="aiMode"><option value="simple">Қарапайым тілмен түсіндіру</option><option value="steps">Қадамдарға бөлу</option><option value="visual">Көрнекілік идеясын ұсыну</option><option value="levels">Үш деңгейлі тапсырма</option></select></div><div class="formrow"><label>Оқу мақсаты</label><input class="field" id="aiGoal" placeholder="Мысалы: екі таңбалы сандарды қосу"></div><div class="formrow" style="grid-column:1/-1"><label>Бастапқы тапсырма</label><textarea class="field" id="aiText" placeholder="Мұғалімнің тапсырмасын осында енгізіңіз..."></textarea></div></div><button class="btn" onclick="generateAdaptation()">Бейімдеу үлгісін жасау</button><div id="aiResult" class="hidden" style="margin-top:17px"></div></div>
- <div class="notice">AI ұсынған кез келген материалды мұғалім тексеруі керек. Бұл құрал оқушы туралы диагноз немесе медициналық қорытынды жасамайды.</div>
-</section>
-
-<section class="view" id="settings">
- <div class="eyebrow">Платформа параметрлері</div><h2>Қолжетімділік және баптаулар</h2>
- <div class="grid two">
-  <div class="panel"><h3>Көрініс</h3><p>Қаріп өлшемі</p><button class="btn outline small" onclick="toggleLarge()">A− / A+ өзгерту</button><p style="margin-top:17px">Контраст</p><button class="btn outline small" onclick="toggleContrast()">Жоғары контрастты қосу/өшіру</button><p style="margin-top:17px">Тіл</p><button class="btn outline small" onclick="toggleLang()">Қазақша / Русский</button></div>
-  <div class="panel"><h3>Мәтінді дыбыстап оқу</h3><p class="muted">Беттегі мәтінді браузердің дыбыстау мүмкіндігі арқылы тыңдауға болады.</p><button class="btn" onclick="speakPage()">▶ Мәтінді оқу</button> <button class="btn outline" onclick="stopSpeak()">Тоқтату</button><p class="muted" style="font-size:12px;margin-top:12px">Дыбыстау қолдауы браузер мен құрылғыға байланысты.</p></div>
- </div>
- <div class="panel" style="margin-top:15px"><h3>Демо деректер</h3><p class="muted">Осы браузерде жиналған тест нәтижелерін тазалау.</p><button class="btn outline" onclick="resetDemo()">Нәтижелерді тазалау</button></div>
-</section>
+<div class="hero">
+<h1>Әр оқушыға — тең мүмкіндік!</h1>
+<p>Ерекше білім беру қажеттіліктері бар оқушыларға арналған қолжетімді, ыңғайлы және интерактивті білім беру платформасы.</p>
+<br>
+<a href="#classes"><button>Оқуды бастау</button></a>
 </div>
-<div class="footer">INCLUSIVE KZ · Инклюзивті білім беруді қолдау платформасының прототипі · 2026</div>
-</main>
+
+<section id="about">
+<h2>Жоба туралы</h2>
+<div class="card">
+<p>INCLUSIVE KZ — оқушылардың жеке ерекшеліктерін ескере отырып білім алуға мүмкіндік беретін платформа.</p>
+<p>Платформада оқу материалдары, интерактивті тапсырмалар және қолжетімділік құралдары жинақталған.</p>
 </div>
-<div class="modal" id="modal" onclick="if(event.target.id==='modal')closeModal()"><div class="modal-card"><div class="modal-head"><div><span class="tag" id="modalTag">Материал</span><h2 id="modalTitle">Тақырып</h2></div><button class="close" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
+</section>
+
+<section id="classes">
+<h2>Оқу сыныбын таңда</h2>
+<div class="grid">
+<div class="card"><h3>Бастауыш сынып</h3><p>1–4 сыныптарға арналған тапсырмалар.</p><button onclick="chooseClass('1–4 сынып')">Таңдау</button></div>
+<div class="card"><h3>Орта буын</h3><p>5–8 сыныптарға арналған тапсырмалар.</p><button onclick="chooseClass('5–8 сынып')">Таңдау</button></div>
+<div class="card"><h3>Жоғары сынып</h3><p>9–11 сыныптарға арналған тапсырмалар.</p><button onclick="chooseClass('9–11 сынып')">Таңдау</button></div>
+</div>
+<p id="classResult"></p>
+</section>
+
+<section id="tasks">
+<h2>Интерактивті тапсырмалар</h2>
+<div class="card">
+<h3>Информатика: компьютер құрылғылары</h3>
+<p>Компьютердің ақпаратты өңдейтін негізгі құрылғысы қайсы?</p>
+<div id="answers">
+<button class="answer" onclick="checkAnswer(0)">Монитор</button>
+<button class="answer" onclick="checkAnswer(1)">Процессор</button>
+<button class="answer" onclick="checkAnswer(2)">Пернетақта</button>
+</div>
+<p id="result"></p>
+</div>
+</section>
+
+<section>
+<h2>Менің жетістіктерім</h2>
+<div class="card">
+<p>Дұрыс жауаптар саны: <b id="score">0</b></p>
+<div class="progress"><div id="progressBar"></div></div>
+<p id="achievement">Алғашқы тапсырманы орында!</p>
+<button onclick="resetScore()">Нәтижені тазарту</button>
+</div>
+</section>
+
+<section id="access">
+<h2>Қолжетімділік баптаулары</h2>
+<div class="card access">
+<p>Оқу ортасын өзіңе ыңғайла:</p>
+<button onclick="changeFont(1)">Қаріпті үлкейту +</button>
+<button onclick="changeFont(-1)">Қаріпті кішірейту −</button>
+<button onclick="toggleContrast()">Контраст режимі</button>
+<button onclick="readText()">Мәтінді дыбыстау</button>
+<button onclick="stopReading()">Дыбыстауды тоқтату</button>
+</div>
+</section>
+
+<footer>
+<p>INCLUSIVE KZ © 2026</p>
+<p>Инклюзивті білім — баршаға ортақ мүмкіндік.</p>
+</footer>
+
 <script>
-const materials=[
-[1,'Математика','1-ден 10-ға дейін санау','Көрнекілік','🔢','Суреттер мен заттарды санау арқылы сандарды тану.','1-ден 10-ға дейінгі сандарды таны. Мысалы: 🍎 🍎 🍎 — 3 алма. Тапсырма: суреттегі заттарды сана. Бейімдеу: нақты заттарды қолданып, бір уақытта бір нұсқау бер.'],
-[1,'Қазақ тілі','Дауысты дыбыстар','Тапсырма','🔤','Дауысты дыбыстарды есту және белгілеу.','Дауысты дыбыстар: А, Ә, О, Ө, Ұ, Ү, Ы, І, Е. Тапсырма: «Ана» сөзіндегі дауысты дыбыстарды тап. Бейімдеу: әріпті ірі қаріппен көрсет.'],
-[2,'Математика','Қосу және азайту','Тапсырма','➕','Заттарды топтау арқылы қарапайым амалдар.','2 алмаға тағы 1 алма қостық. 2+1=3. Тапсырма: 3+1 және 4−2 амалдарын орында. Бейімдеу: санау таяқшаларын пайдалан.'],
-[2,'Дүниетану','Жыл мезгілдері','Көрнекілік','🍂','Төрт мезгілді табиғат белгілері арқылы ажырату.','Көктем — гүл өседі; жаз — күн жылы; күз — жапырақ сарғаяды; қыс — қар жауады. Тапсырма: суретті мезгілмен сәйкестендір.'],
-[3,'Қазақ тілі','Менің күн тәртібім','Жеңілдетілген мәтін','☀️','Қысқа мәтінді оқу және әрекеттерді реттеу.','Мен таңертең тұрамын. Бетімді жуамын. Таңғы ас ішемін. Мектепке барамын. Сұрақ: бала таңертең не істейді? Бейімдеу: әр сөйлемді жеке оқы.'],
-[3,'Математика','Көбейту кестесі','Көрнекілік','✖️','Қайталанатын қосу арқылы көбейтуді түсіну.','2×3 — 2 санын үш рет қосу: 2+2+2=6. Тапсырма: 3×2 амалын суретпен көрсет.'],
-[4,'Дүниетану','Табиғатты қорғау','Жеңілдетілген мәтін','🌳','Табиғатты қорғаудың күнделікті жолдары.','Қоқысты жерге тастама. Суды үнемде. Ағашты сындырма. Тапсырма: табиғатты қорғайтын екі әрекетті ата.'],
-[4,'Математика','Көптаңбалы сандар','Тапсырма','🔢','Санның разрядтарын ажырату.','245 = 2 жүздік + 4 ондық + 5 бірлік. Тапсырма: 132 санында неше жүздік, ондық, бірлік бар? Разряд кестесін қолдан.'],
-[5,'Информатика','Компьютер құрылғылары','Көрнекілік','🖥️','Негізгі құрылғылар мен қызметін сәйкестендіру.','Монитор — ақпаратты көрсетеді. Пернетақта — мәтін енгізеді. Тінтуір — нысанды таңдайды. Тапсырма: атауларды қызметімен сәйкестендір.'],
-[5,'Қазақ тілі','Мәтіннің негізгі ойы','Тапсырма','📖','Қысқа мәтіннен басты ақпаратты табу.','Айжан ағаш отырғызды. Ол ағашты суарды. Ағаш өсті. Сұрақ: мәтін не туралы?'],
-[6,'Информатика','Ақпарат түрлері','Көрнекілік','💡','Мәтіндік, дыбыстық және графикалық ақпаратты ажырату.','Мәтіндік — кітаптағы сөздер; дыбыстық — ән; графикалық — сурет. Тапсырма: мысалдарды үш топқа бөл.'],
-[6,'Математика','Жай бөлшектер','Тапсырма','🍕','Бүтін мен бөлшек бөлікті сурет арқылы түсіну.','Бүтінді екі тең бөлікке бөлсек, бір бөлігі 1/2 болады. Тапсырма: дөңгелектің жартысын боя.'],
-[7,'Информатика','Алгоритм және орындаушы','Жеңілдетілген мәтін','🧭','Алгоритмді ретімен орындалатын қадамдар ретінде түсіну.','Алгоритм — қадамдар реті. 1. Компьютерді қос. 2. Бағдарламаны аш. 3. Тапсырманы орында. 4. Сақта. Тапсырма: қадамдарды ретте.'],
-[7,'Математика','Пайыз ұғымы','Көрнекілік','％','Пайызды жүзден бір бөлік ретінде түсіну.','50% — жартысы. 100 теңгенің 50%-ы — 50 теңге. Тапсырма: 100 ұяшықтың 25-ін боя.'],
-[8,'Информатика','Тармақталу алгоритмі','Тапсырма','🔀','Шартқа байланысты әрекетті таңдауды үйрену.','Егер жаңбыр жауса, қолшатыр ал. Әйтпесе, алма. Тапсырма: «Егер сан жұп болса...» шартына екі нәтиже жаз.'],
-[8,'Қазақ тілі','Мәтінді жоспарлау','Жеңілдетілген мәтін','🗂️','Мәтінді мағыналық бөліктерге бөліп, жоспар құру.','Жоспар: кіріспе, негізгі бөлім, қорытынды. Тапсырма: мәтінге үш қысқа тақырып ойлап тап.'],
-[9,'Информатика','Деректермен жұмыс','Тапсырма','📊','Кестедегі мәліметтерді оқу және қорытынды жасау.','Кестеден ең үлкен мәнді тап. Екі мәннің айырмасын анықта. Бейімдеу: маңызды бағандарды белгіле.'],
-[9,'Математика','Сызықтық функция','Көрнекілік','📈','Функция мен график арасындағы байланысты түсіну.','y=kx+b. Графигі — түзу сызық. Тапсырма: y=x болса, x=1 кезінде y неге тең?'],
-[10,'Информатика','Деректер қоры','Жеңілдетілген мәтін','🗃️','Кесте, өріс және жазба ұғымдарын ажырату.','Деректер қоры ақпаратты сақтайды. Өріс — баған, жазба — жол. Тапсырма: оқушылар тізіміндегі өрістерді ата.'],
-[10,'Математика','Статистика негіздері','Тапсырма','📉','Деректер жиынынан орташа мәнді табу.','Орташа мән = сандар қосындысы / сандар саны. Мысал: (2+4+6)/3=4. Тапсырма: 3,6,9 сандарының орташа мәнін тап.'],
-[11,'Информатика','Ақпараттық қауіпсіздік','Көрнекілік','🔐','Жеке деректерді қорғаудың негізгі ережелерін білу.','Құпиясөзді ешкімге айтпа. Күмәнді сілтемені ашпа. Жеке мәліметті таратпа. Күдікті жағдайды сенімді ересекке айт.'],
-[11,'Қазақ тілі','Мәтінді қорытындылау','Тапсырма','📝','Негізгі ойды қысқа әрі жүйелі жеткізу.','Мәтінді оқып, негізгі ойын 1–2 сөйлеммен жаз немесе ауызша айт. Сөйлем бастауы: «Мәтінде ... туралы айтылған».']
-];
-const titles={home:'Басты бет',classes:'1–11 сыныптар',tasks:'Интерактивті тапсырмалар',needs:'Ерекше қажеттіліктер',student:'Оқушы кабинеті',teacher:'Мұғалім кабинеті',parent:'Ата-ана кабинеті',progress:'Оқу жетістіктері',library:'Әдістемелік кітапхана',assistant:'AI көмекші',settings:'Баптаулар'};
-let selectedGrade=1,large=false,contrast=false,lang='kk',teacherTasks=0,customTasks=[];
-let stats=JSON.parse(localStorage.getItem('inclusiveStats')||'{"total":0,"correct":0,"answered":[]}');
-function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));document.getElementById('crumb').textContent=titles[id]||'INCLUSIVE KZ';window.scrollTo({top:0,behavior:'smooth'});updateStats()}
-document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
-function renderGrades(){let g=document.getElementById('gradeGrid');g.innerHTML=Array.from({length:11},(_,i)=>`<button class="grade-card ${i+1===selectedGrade?'active':''}" onclick="selectGrade(${i+1})"><strong>${i+1}</strong><span>-сынып</span></button>`).join('')}
-function selectGrade(n){selectedGrade=n;renderGrades();document.getElementById('classEyebrow').textContent=n+'-СЫНЫП';document.getElementById('classTitle').textContent=n+'-сынып материалдары';document.getElementById('studentGrade').textContent=n;renderMaterials();document.getElementById('classTitle').scrollIntoView({behavior:'smooth',block:'center'})}
-function renderMaterials(){let q=(document.getElementById('classSearch').value||'').toLowerCase(),s=document.getElementById('classSubject').value,t=document.getElementById('classType').value;let arr=materials.filter(m=>m[0]===selectedGrade&&(s==='all'||m[1]===s)&&(t==='all'||m[3]===t)&&(m[2].toLowerCase().includes(q)||m[5].toLowerCase().includes(q)));document.getElementById('classCount').textContent=arr.length+' материал';document.getElementById('classResources').innerHTML=arr.length?arr.map((m)=>`<article class="resource"><div class="r-icon">${m[4]}</div><span class="tag">${m[3]}</span><h3>${m[2]}</h3><p>${m[5]}</p><div class="resource-foot"><span>${m[1]} · ${m[0]}-сынып</span><button class="linkbtn" onclick="openMaterial(${materials.indexOf(m)})">Ашу →</button></div></article>`).join(''):'<div class="empty">Бұл сүзгі бойынша материал табылмады.</div>'}
-function openMaterial(i){let m=materials[i];document.getElementById('modalTag').textContent=m[1]+' · '+m[0]+'-СЫНЫП · '+m[3];document.getElementById('modalTitle').textContent=m[2];document.getElementById('modalBody').innerHTML='<p>'+m[6]+'</p><button class="btn small" onclick="speakText('+JSON.stringify(m[6]).replace(/</g,'\\u003c')+')">▶ Мәтінді тыңдау</button>';document.getElementById('modal').classList.add('open')}
-function openInfo(t,body){document.getElementById('modalTag').textContent='ӘДІСТЕМЕЛІК КІТАПХАНА';document.getElementById('modalTitle').textContent=t;document.getElementById('modalBody').innerHTML='<p>'+body+'</p>';document.getElementById('modal').classList.add('open')}
-function closeModal(){document.getElementById('modal').classList.remove('open')}
-document.getElementById('classSearch').addEventListener('input',renderMaterials);document.getElementById('classSubject').addEventListener('change',renderMaterials);document.getElementById('classType').addEventListener('change',renderMaterials);
-function answerQuiz(id,correct,btn){let group=document.getElementById('quiz'+id);if(group.dataset.done)return;group.dataset.done='1';let isCorrect=btn.textContent.trim()===String(correct);stats.total++;if(isCorrect)stats.correct++;stats.answered.push({id,correct:isCorrect});localStorage.setItem('inclusiveStats',JSON.stringify(stats));group.querySelectorAll('button').forEach(b=>{b.disabled=true;if(b===btn)b.classList.add('selected')});document.getElementById('feedback'+id).innerHTML=`<div class="feedback">${isCorrect?'Дұрыс жауап! Жарайсың! 🌟':'Бұл жолы дұрыс болмады. Қайта қарап көр!'} ${isCorrect?' +1 ұпай':''}</div>`;updateStats()}
-function updateStats(){let done=stats.answered.length,correct=stats.correct,percent=stats.total?Math.round(correct/stats.total*100):0;['studentDone','parentDone'].forEach(id=>{let e=document.getElementById(id);if(e)e.textContent=done+(id==='parentDone'?' тапсырма':'')});['studentPoints','parentPoints'].forEach(id=>{let e=document.getElementById(id);if(e)e.textContent=correct+(id==='parentPoints'?' ұпай':'')});let b=document.getElementById('studentBadge');if(b)b.textContent=correct>=4?'🏆':correct>=2?'⭐':'🌱';let bar=document.getElementById('studentBar');if(bar)bar.style.width=Math.min(100,done*25)+'%';let per=document.getElementById('studentPercent');if(per)per.textContent=Math.min(100,done*25)+'% орындалды';let vals={progressTotal:stats.total,progressCorrect:correct,progressAccuracy:percent+'%',progressStars:correct+' ⭐'};Object.entries(vals).forEach(([id,v])=>{let e=document.getElementById(id);if(e)e.textContent=v});let rows=document.getElementById('progressRows');if(rows)rows.innerHTML=[1,2,3,4].map(i=>{let x=stats.answered.filter(a=>a.id===i);return `<p>Тапсырма ${i} <span style="float:right">${x.length?x[x.length-1].correct?'Дұрыс':'Қайталау қажет':'Әзірге орындалмаған'}</span></p><div class="progress"><span style="width:${x.length?(x[x.length-1].correct?100:25):0}%"></span></div>`}).join('')}
-function addCustomTask(){let text=document.getElementById('customTask').value.trim();if(!text){alert('Алдымен тапсырма мәтінін енгізіңіз.');return}customTasks.push({subject:document.getElementById('customSubject').value,grade:document.getElementById('customGrade').value,text});document.getElementById('customTask').value='';document.getElementById('customList').innerHTML='<div class="feedback">Тапсырма үлгісі қосылды. Барлығы: '+customTasks.length+'</div>';document.getElementById('teacherTaskCount').textContent=teacherTasks+customTasks.length}
-function createTeacherTask(){let d=document.getElementById('teacherDesc').value.trim();if(!d){alert('Тапсырма сипаттамасын енгізіңіз.');return}teacherTasks++;document.getElementById('teacherTaskCount').textContent=teacherTasks+customTasks.length;document.getElementById('teacherCreated').innerHTML=`<div class="feedback"><b>Тапсырма үлгісі сақталды.</b><p>${document.getElementById('teacherGrade').value}-сынып · ${document.getElementById('teacherSubject').value} · ${document.getElementById('teacherLevel').value}</p><p>${d}</p><small>Бұл тек осы беттегі уақытша демо сақтау.</small></div>`;document.getElementById('teacherDesc').value=''}
-function generateAdaptation(){let goal=document.getElementById('aiGoal').value.trim(),src=document.getElementById('aiText').value.trim(),mode=document.getElementById('aiMode').value,grade=document.getElementById('aiGrade').value,sub=document.getElementById('aiSubject').value;if(!goal&&!src){alert('Оқу мақсатын немесе бастапқы тапсырманы енгізіңіз.');return}let body='';if(mode==='simple')body=`<b>Қарапайым түсіндіру:</b><p>${goal||src}</p><p>Тапсырманы қысқа сөйлемдермен түсіндіріңіз. Бір уақытта бір әрекет ұсыныңыз. Жауапты ауызша, жазбаша немесе суретпен беруге мүмкіндік жасаңыз.`;else if(mode==='steps')body=`<b>Қадамдық нұсқаулық:</b><ol><li>Тапсырманы оқы.</li><li>Не істеу керегін анықта.</li><li>Бірінші қадамды орында.</li><li>Нәтижені тексер.</li><li>Келесі қадамға өт.</li></ol>`;else if(mode==='visual')body=`<b>Көрнекілік идеялары:</b><ul><li>Тақырыпқа қатысты 2–3 сурет немесе пиктограмма таңда.</li><li>Негізгі сөздерді бөлек карточкаға жаз.</li><li>Мысалды түспен белгіле.</li><li>Дайын үлгіні көрсетіп, содан кейін оқушыға орындат.</li></ul>`;else body=`<b>Үш деңгейлі үлгі:</b><ol><li><b>Жеңіл:</b> дайын үлгімен орындау.</li><li><b>Орташа:</b> тірек сөздер немесе қадамдар арқылы орындау.</li><li><b>Күрделі:</b> алған білімді жаңа мысалда қолдану.</li></ol>`;document.getElementById('aiResult').classList.remove('hidden');document.getElementById('aiResult').innerHTML=`<div class="feedback"><span class="tag">${grade}-сынып · ${sub}</span><h3>Бейімдеу ұсынысы</h3><p><b>Оқу мақсаты:</b> ${goal||'Енгізілген тапсырма'}</p><p><b>Бастапқы мәтін:</b> ${src||'—'}</p>${body}<p><small>Бұл автоматты үлгі. Мұғалім оқушының нақты қажеттілігіне қарай тексеріп, бейімдеуі тиіс.</small></p><button class="btn small" onclick="copyText(document.getElementById('aiResult').innerText)">Нәтижені көшіру</button></div>`}
-function toggleLarge(){large=!large;document.body.classList.toggle('large',large)}
-function toggleContrast(){contrast=!contrast;document.body.classList.toggle('high',contrast)}
-function toggleLang(){lang=lang==='kk'?'ru':'kk';document.getElementById('langBtn').textContent=lang==='kk'?'ҚАЗ / РУС':'РУС / ҚАЗ';alert(lang==='ru'?'Демо: интерфейстің толық орысша аудармасы серверлік локализация кезеңінде қосылады.':'Қазақша режим таңдалды.')}
-function speakText(t){if(!('speechSynthesis'in window)){alert('Бұл браузерде мәтінді дыбыстау қолжетімсіз.');return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=lang==='kk'?'kk-KZ':'ru-RU';speechSynthesis.speak(u)}
-function speakPage(){let t=document.querySelector('.view.active').innerText;speakText(t.slice(0,3500))}
-function stopSpeak(){if('speechSynthesis'in window)speechSynthesis.cancel()}
-function copyText(t){if(navigator.clipboard)navigator.clipboard.writeText(t).then(()=>alert('Көшірілді.'));else alert('Көшіру бұл браузерде қолжетімсіз.')}
-function resetDemo(){if(confirm('Демо нәтижелерін тазалайсыз ба?')){stats={total:0,correct:0,answered:[]};localStorage.setItem('inclusiveStats',JSON.stringify(stats));document.querySelectorAll('[id^=quiz]').forEach(g=>{delete g.dataset.done;g.querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('selected')})});[1,2,3,4].forEach(i=>document.getElementById('feedback'+i).innerHTML='');updateStats()}}
-function fillGradeSelect(id){let el=document.getElementById(id);el.innerHTML=Array.from({length:11},(_,i)=>`<option value="${i+1}">${i+1}-сынып</option>`).join('')}
-renderGrades();selectGrade(1);['customGrade','teacherGrade','aiGrade'].forEach(fillGradeSelect);updateStats();
+let score = Number(localStorage.getItem("inclusiveScore")) || 0;
+
+function updateScore(){
+ document.getElementById("score").textContent=score;
+ let percent=Math.min(score*20,100);
+ document.getElementById("progressBar").style.width=percent+"%";
+ let achievement="Жақсы бастама! Жалғастыр!";
+ if(score>=5) achievement="Жарайсың! Белсенді оқушы!";
+ if(score>=10) achievement="Керемет! Білім көшбасшысы!";
+ document.getElementById("achievement").textContent=achievement;
+}
+
+function chooseClass(name){
+ document.getElementById("classResult").textContent="Сен таңдаған бөлім: "+name;
+}
+
+function checkAnswer(answer){
+ if(answer===1){
+  score++;
+  localStorage.setItem("inclusiveScore",score);
+  document.getElementById("result").textContent="Дұрыс жауап! Жарайсың!";
+ }else{
+  document.getElementById("result").textContent="Қайта ойланып көр. Тағы бір рет таңда!";
+ }
+ updateScore();
+}
+
+let fontSize=16;
+function changeFont(value){
+ fontSize+=value;
+ if(fontSize<12)fontSize=12;
+ if(fontSize>26)fontSize=26;
+ document.body.style.fontSize=fontSize+"px";
+}
+
+function toggleContrast(){
+ document.body.classList.toggle("high-contrast");
+}
+
+function readText(){
+ let text=document.querySelector(".hero").innerText;
+ let speech=new SpeechSynthesisUtterance(text);
+ speech.lang="kk-KZ";
+ speechSynthesis.cancel();
+ speechSynthesis.speak(speech);
+}
+
+function stopReading(){
+ speechSynthesis.cancel();
+}
+
+function resetScore(){
+ score=0;
+ localStorage.setItem("inclusiveScore",0);
+ updateScore();
+}
+
+updateScore();
 </script>
-</body></html>
+</body>
+</html>
