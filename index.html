@@ -1,178 +1,495 @@
 
+
 <!DOCTYPE html>
 <html lang="kk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INCLUSIVE KZ | Инклюзивті білім</title>
+<title>INCLUSIVE KZ — Білім баршаға</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f7f2;color:#26372e;line-height:1.6}
-header{background:#244c3a;color:white;padding:25px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:25px;font-weight:bold}
-nav a{color:white;text-decoration:none;margin:0 10px}
-.hero{padding:65px 8%;background:#e3eee4;text-align:center}
-.hero h1{font-size:38px;margin-bottom:15px}
-.hero p{max-width:700px;margin:auto}
-button,select{padding:12px 18px;border:0;border-radius:9px;background:#397653;color:white;cursor:pointer;font-size:15px;margin:7px}
-button:hover{background:#244c3a}
-section{padding:45px 8%}
-h2{margin-bottom:20px;color:#244c3a}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:white;padding:23px;border-radius:15px;box-shadow:0 3px 14px #0000000d}
-.card h3{margin-bottom:10px;color:#397653}
-.card p{margin-bottom:12px}
-select{background:#397653}
-#task{margin-top:20px}
-.answer{display:block;width:100%;text-align:left;background:#e9f1e9;color:#26372e;margin:8px 0}
-.answer:hover{background:#d3e6d5}
-#result{font-weight:bold;margin-top:15px}
-.access button{background:#526e5c}
-footer{text-align:center;padding:25px;background:#244c3a;color:white}
-.progress{background:#e1e9e1;height:15px;border-radius:10px;overflow:hidden;margin:12px 0}
-.progress div{background:#397653;height:100%;width:0%;transition:.3s}
-.large{font-size:19px}
-.high-contrast{background:#111!important;color:#fff!important}
-.high-contrast .card{background:#222;color:white}
+:root{
+ --green:#315c4b;
+ --green2:#477d65;
+ --mint:#e5f1e9;
+ --cream:#f8f8f3;
+ --purple:#8171b5;
+ --lavender:#eeeafd;
+ --yellow:#f5d985;
+ --text:#273b32;
+ --white:#fff;
+ --shadow:0 12px 35px #284c3810;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--cream);color:var(--text);
+ font-family:Arial,sans-serif;line-height:1.65;
+ transition:background .2s,color .2s;
+}
+button,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,91%);margin:auto}
+header{
+ position:sticky;top:0;z-index:10;background:#ffffffed;
+ backdrop-filter:blur(14px);border-bottom:1px solid #e8eee8;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:20px}
+.logo{font-weight:900;font-size:22px;color:var(--green);letter-spacing:1px}
+.logo span{color:var(--purple)}
+.navlinks{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.navlinks a{font-size:14px;font-weight:600;color:#53665b}
+.navlinks a:hover{color:var(--purple)}
+.menu-btn{display:none}
+.btn{
+ border:0;border-radius:13px;padding:12px 19px;
+ background:var(--green);color:white;font-weight:700;
+ transition:.2s;display:inline-block;
+}
+.btn:hover{transform:translateY(-2px);background:var(--green2)}
+.btn.light{background:var(--mint);color:var(--green)}
+.btn.purple{background:var(--purple)}
+.btn.small{padding:9px 13px;font-size:13px}
+.hero{padding:65px 0 55px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tag{
+ display:inline-block;background:var(--mint);color:var(--green);
+ border-radius:30px;padding:8px 14px;font-size:13px;font-weight:700;
+}
+.hero h1{font-size:clamp(36px,5vw,61px);line-height:1.1;margin:20px 0}
+.hero h1 span{color:var(--purple)}
+.hero p{font-size:17px;color:#637269;max-width:550px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.art{
+ min-height:360px;border-radius:40px;background:var(--mint);
+ position:relative;display:flex;align-items:center;justify-content:center;
+ overflow:hidden;
+}
+.art-circle{position:absolute;width:270px;height:270px;border-radius:50%;background:#c9dfd0}
+.art-card{
+ z-index:1;background:white;border-radius:25px;padding:25px;
+ width:72%;box-shadow:var(--shadow);transform:rotate(-4deg);
+}
+.art-card .emoji{font-size:55px}
+.art-card h3{font-size:23px;color:var(--green);margin:5px 0}
+.art-card p{font-size:14px}
+.float{
+ position:absolute;background:white;border-radius:16px;padding:12px 17px;
+ box-shadow:var(--shadow);font-size:14px;font-weight:700;
+}
+.float.one{top:35px;right:15px}
+.float.two{bottom:30px;left:12px}
+.section{padding:60px 0}
+.section-head{margin-bottom:27px}
+.eyebrow{color:var(--purple);font-size:13px;font-weight:800;letter-spacing:1.5px}
+h2{font-size:clamp(27px,4vw,38px);line-height:1.2;margin:8px 0;color:var(--green)}
+.sub{color:#718077;max-width:650px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+ background:white;border:1px solid #edf0eb;border-radius:23px;
+ padding:24px;box-shadow:var(--shadow);
+}
+.card-icon{
+ width:55px;height:55px;border-radius:17px;display:grid;
+ place-items:center;font-size:27px;margin-bottom:15px;
+ background:var(--mint);
+}
+.card h3{margin:5px 0 8px;color:var(--green);font-size:19px}
+.card p{color:#718077;font-size:14px}
+.card .btn{margin-top:12px}
+.purple-bg{background:var(--lavender)}
+.yellow-bg{background:#fff4d7}
+.blue-bg{background:#e5f0fa}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.panel{
+ background:var(--green);color:white;padding:32px;border-radius:27px;
+}
+.panel h2{color:white}
+.panel p{color:#e0eee4}
+.panel .btn{background:white;color:var(--green)}
+.progress-track{height:12px;background:#ffffff35;border-radius:20px;overflow:hidden;margin:15px 0}
+.progress-fill{height:100%;width:0;background:var(--yellow);transition:.3s}
+.stat-row{display:flex;gap:25px;flex-wrap:wrap;margin-top:20px}
+.stat strong{font-size:27px;display:block}
+.stat span{font-size:12px;color:#d7e6dc}
+.profile{background:white;padding:30px;border-radius:27px;box-shadow:var(--shadow)}
+.profile label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
+select{
+ width:100%;padding:13px;border:1px solid #dce6dd;
+ border-radius:12px;background:#f9fbf8;color:var(--text);
+}
+.quiz{background:white;border-radius:25px;padding:28px;box-shadow:var(--shadow)}
+.quiz-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--purple);font-weight:700}
+.option{
+ width:100%;text-align:left;padding:15px 17px;margin:7px 0;
+ background:#f3f6f2;border:2px solid transparent;border-radius:13px;color:var(--text);
+}
+.option:hover,.option:focus{border-color:var(--purple)}
+.option.correct{background:#e1f3e5;border-color:#4b9b62}
+.option.wrong{background:#fff0ed;border-color:#d77c70}
+.feedback{font-weight:700;min-height:30px;margin-top:10px}
+.badges{display:flex;gap:12px;flex-wrap:wrap}
+.badge{
+ flex:1;min-width:130px;background:white;border-radius:18px;padding:17px;
+ text-align:center;box-shadow:var(--shadow)
+}
+.badge .emoji{font-size:32px}
+.badge p{font-size:13px;color:#718077}
+.access-panel{
+ background:var(--lavender);border-radius:27px;padding:28px;
+}
+.access-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+.access-buttons button{border:0;border-radius:12px;padding:12px 16px;background:white;color:#463b78;font-weight:700}
+.access-buttons button:hover{background:#ddd6fa}
+footer{background:#203e32;color:white;padding:35px 0;margin-top:40px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{color:#d4e1d8;font-size:13px}
+.hidden{display:none}
+body.large-text{font-size:19px}
+body.large-text .card p,body.large-text .sub{font-size:17px}
+body.high-contrast{background:#000;color:#fff}
+body.high-contrast header,body.high-contrast .card,
+body.high-contrast .quiz,body.high-contrast .profile,
+body.high-contrast .badge{background:#111;color:#fff;border:1px solid #fff}
+body.high-contrast h2,body.high-contrast h3{color:#ffed70}
+body.high-contrast p{color:#fff}
+body.high-contrast .option{background:#222;color:white}
+body.easy-font{font-family:Verdana,Arial,sans-serif;letter-spacing:.4px;line-height:1.9}
+button:focus-visible,a:focus-visible,select:focus-visible{
+ outline:3px solid #987be0;outline-offset:3px
+}
+@media(max-width:800px){
+ .hero-grid,.split{grid-template-columns:1fr}
+ .grid{grid-template-columns:1fr 1fr}
+ .navlinks{display:none}
+ .menu-btn{display:block}
+ .navlinks.open{display:flex;position:absolute;top:75px;left:0;right:0;background:white;padding:20px;flex-direction:column;box-shadow:var(--shadow)}
+}
+@media(max-width:540px){
+ .grid{grid-template-columns:1fr}
+ .hero{padding-top:40px}
+ .art{min-height:300px}
+ .section{padding:42px 0}
+ .card{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+}
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">INCLUSIVE KZ</div>
-<nav>
-<a href="#about">Жоба туралы</a>
-<a href="#classes">Сыныптар</a>
-<a href="#tasks">Тапсырмалар</a>
-<a href="#access">Қолжетімділік</a>
-</nav>
+ <div class="container nav">
+  <a class="logo" href="#">INCLUSIVE <span>KZ.</span></a>
+  <button class="btn small menu-btn" onclick="toggleMenu()" aria-label="Мәзірді ашу">☰</button>
+  <nav class="navlinks" id="navlinks">
+   <a href="#about">Жоба</a>
+   <a href="#directions">Мүмкіндіктер</a>
+   <a href="#learning">Оқу ортасы</a>
+   <a href="#game">Тапсырмалар</a>
+   <a href="#access">Қолжетімділік</a>
+  </nav>
+ </div>
 </header>
 
-<div class="hero">
-<h1>Әр оқушыға — тең мүмкіндік!</h1>
-<p>Ерекше білім беру қажеттіліктері бар оқушыларға арналған қолжетімді, ыңғайлы және интерактивті білім беру платформасы.</p>
-<br>
-<a href="#classes"><button>Оқуды бастау</button></a>
-</div>
-
-<section id="about">
-<h2>Жоба туралы</h2>
-<div class="card">
-<p>INCLUSIVE KZ — оқушылардың жеке ерекшеліктерін ескере отырып білім алуға мүмкіндік беретін платформа.</p>
-<p>Платформада оқу материалдары, интерактивті тапсырмалар және қолжетімділік құралдары жинақталған.</p>
-</div>
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <span class="tag">🌱 БІЛІМ БАРШАҒА ОРТАҚ</span>
+   <h1>Әр баланың <span>мүмкіндігі</span> шексіз!</h1>
+   <p>Әр оқушының оқу ерекшелігін ескеретін, білімді қызықты әрі қолжетімді ететін жаңа цифрлық орта.</p>
+   <div class="hero-actions">
+    <a href="#learning" class="btn">Оқуды бастау →</a>
+    <a href="#about" class="btn light">Жоба туралы</a>
+   </div>
+  </div>
+  <div class="art" aria-label="Білім алуды бейнелейтін иллюстрация">
+   <div class="art-circle"></div>
+   <div class="art-card">
+    <div class="emoji">📚🌈</div>
+    <h3>Менің оқу әлемім</h3>
+    <p>Өз қарқыныңмен үйрен. Әр қадамың — жетістік!</p>
+    <div style="background:#e5f1e9;border-radius:20px;padding:9px;text-align:center;color:#315c4b;font-weight:bold">Бірге үйренеміз!</div>
+   </div>
+   <div class="float one">⭐ Жетістікке жет!</div>
+   <div class="float two">💚 Сенің қолыңнан келеді!</div>
+  </div>
+ </div>
 </section>
 
-<section id="classes">
-<h2>Оқу сыныбын таңда</h2>
-<div class="grid">
-<div class="card"><h3>Бастауыш сынып</h3><p>1–4 сыныптарға арналған тапсырмалар.</p><button onclick="chooseClass('1–4 сынып')">Таңдау</button></div>
-<div class="card"><h3>Орта буын</h3><p>5–8 сыныптарға арналған тапсырмалар.</p><button onclick="chooseClass('5–8 сынып')">Таңдау</button></div>
-<div class="card"><h3>Жоғары сынып</h3><p>9–11 сыныптарға арналған тапсырмалар.</p><button onclick="chooseClass('9–11 сынып')">Таңдау</button></div>
-</div>
-<p id="classResult"></p>
+<section class="section" id="about">
+ <div class="container">
+  <div class="section-head">
+   <span class="eyebrow">БІЗДІҢ МАҚСАТЫМЫЗ</span>
+   <h2>Білім алуға тең мүмкіндік</h2>
+   <p class="sub">INCLUSIVE KZ — оқушыларға өзіне ыңғайлы тәсілмен білім алуға көмектесетін инклюзивті платформа.</p>
+  </div>
+  <div class="grid">
+   <article class="card"><div class="card-icon">💚</div><h3>Жеке тәсіл</h3><p>Оқушы өзіне ыңғайлы оқу қарқыны мен деңгейін таңдай алады.</p></article>
+   <article class="card"><div class="card-icon purple-bg">🎧</div><h3>Көп форматты оқу</h3><p>Мәтін, дыбыс және көрнекі материалдарды бірге қолдану.</p></article>
+   <article class="card"><div class="card-icon yellow-bg">🌟</div><h3>Мотивация</h3><p>Тапсырмалар, ұпайлар мен жетістіктер оқуға қызығушылықты арттырады.</p></article>
+  </div>
+ </div>
 </section>
 
-<section id="tasks">
-<h2>Интерактивті тапсырмалар</h2>
-<div class="card">
-<h3>Информатика: компьютер құрылғылары</h3>
-<p>Компьютердің ақпаратты өңдейтін негізгі құрылғысы қайсы?</p>
-<div id="answers">
-<button class="answer" onclick="checkAnswer(0)">Монитор</button>
-<button class="answer" onclick="checkAnswer(1)">Процессор</button>
-<button class="answer" onclick="checkAnswer(2)">Пернетақта</button>
-</div>
-<p id="result"></p>
-</div>
+<section class="section" id="directions">
+ <div class="container">
+  <div class="section-head">
+   <span class="eyebrow">ПЛАТФОРМА МҮМКІНДІКТЕРІ</span>
+   <h2>Әр оқушыға ыңғайлы орта</h2>
+  </div>
+  <div class="grid">
+   <article class="card"><div class="card-icon blue-bg">👁️</div><h3>Көруді қолдау</h3><p>Қаріпті үлкейту, контраст режимі және анық интерфейс.</p></article>
+   <article class="card"><div class="card-icon purple-bg">🔊</div><h3>Дыбыстық қолдау</h3><p>Мәтінді дыбыстау мүмкіндігі. Браузердегі дауысқа тәуелді.</p></article>
+   <article class="card"><div class="card-icon yellow-bg">🧩</div><h3>Қадамдық тапсырма</h3><p>Тапсырмаларды біртіндеп орындап, өз біліміңді тексер.</p></article>
+   <article class="card"><div class="card-icon">📱</div><h3>Кез келген құрылғы</h3><p>Телефон, планшет және компьютер экранына бейімделген.</p></article>
+   <article class="card"><div class="card-icon purple-bg">🌿</div><h3>Өз қарқының</h3><p>Асықпай оқуға және тапсырманы қайта орындауға болады.</p></article>
+   <article class="card"><div class="card-icon yellow-bg">🏆</div><h3>Жетістік жүйесі</h3><p>Ұпай жинап, өз прогресіңді бақыла.</p></article>
+  </div>
+ </div>
 </section>
 
-<section>
-<h2>Менің жетістіктерім</h2>
-<div class="card">
-<p>Дұрыс жауаптар саны: <b id="score">0</b></p>
-<div class="progress"><div id="progressBar"></div></div>
-<p id="achievement">Алғашқы тапсырманы орында!</p>
-<button onclick="resetScore()">Нәтижені тазарту</button>
-</div>
+<section class="section" id="learning">
+ <div class="container">
+  <div class="section-head">
+   <span class="eyebrow">ЖЕКЕ ОҚУ ОРТАСЫ</span>
+   <h2>Өзіңе ыңғайлы оқу жолын таңда</h2>
+   <p class="sub">Оқу деңгейің мен сыныбыңды таңда. Платформа тапсырманы саған бейімдейді.</p>
+  </div>
+  <div class="split">
+   <div class="profile">
+    <h3>⚙️ Оқу баптаулары</h3>
+    <label for="grade">Сыныбың</label>
+    <select id="grade">
+     <option>1-сынып</option><option>2-сынып</option><option>3-сынып</option>
+     <option>4-сынып</option><option>5-сынып</option><option>6-сынып</option>
+     <option>7-сынып</option><option>8-сынып</option><option>9-сынып</option>
+     <option>10-сынып</option><option>11-сынып</option>
+    </select>
+    <label for="level">Оқу деңгейі</label>
+    <select id="level">
+     <option value="easy">Жеңіл — асықпай үйренемін</option>
+     <option value="medium">Орташа — білімімді тексеремін</option>
+     <option value="hard">Күрделі — өзімді сынаймын</option>
+    </select>
+    <label for="format">Оқу тәсілі</label>
+    <select id="format">
+     <option value="visual">Көрнекілік арқылы</option>
+     <option value="text">Мәтін арқылы</option>
+     <option value="audio">Дыбыстап оқу</option>
+    </select>
+    <button class="btn" onclick="saveProfile()">Баптауларды сақтау</button>
+    <p id="profileMessage" role="status"></p>
+   </div>
+   <div class="panel">
+    <span class="tag" style="background:#ffffff22;color:white">МЕНІҢ ПРОГРЕСІМ</span>
+    <h2>Әр қадам маңызды!</h2>
+    <p>Орындалған тапсырмалар саны осында көрсетіледі. Нәтиже осы құрылғыда сақталады.</p>
+    <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
+    <div class="stat-row">
+     <div class="stat"><strong id="points">0</strong><span>ЖИНАЛҒАН ҰПАЙ</span></div>
+     <div class="stat"><strong id="done">0</strong><span>ДҰРЫС ЖАУАП</span></div>
+    </div>
+    <p id="levelMessage">Алғашқы тапсырмаңды орында!</p>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section id="access">
-<h2>Қолжетімділік баптаулары</h2>
-<div class="card access">
-<p>Оқу ортасын өзіңе ыңғайла:</p>
-<button onclick="changeFont(1)">Қаріпті үлкейту +</button>
-<button onclick="changeFont(-1)">Қаріпті кішірейту −</button>
-<button onclick="toggleContrast()">Контраст режимі</button>
-<button onclick="readText()">Мәтінді дыбыстау</button>
-<button onclick="stopReading()">Дыбыстауды тоқтату</button>
-</div>
+<section class="section" id="game">
+ <div class="container">
+  <div class="section-head">
+   <span class="eyebrow">БІЛІМДІ ТЕКСЕР</span>
+   <h2>Ойын арқылы үйрен!</h2>
+   <p class="sub">Сұраққа жауап бер. Қателессең де қорықпа — қайта байқап көре аласың.</p>
+  </div>
+  <div class="quiz">
+   <div class="quiz-top">
+    <span>🧠 Информатика</span>
+    <span id="questionNumber">1 / 5</span>
+   </div>
+   <h3 id="question" style="margin:22px 0">Компьютердің негізгі есептеу құрылғысы қайсы?</h3>
+   <div id="options">
+    <button class="option" onclick="answer(0)">Монитор</button>
+    <button class="option" onclick="answer(1)">Процессор</button>
+    <button class="option" onclick="answer(2)">Пернетақта</button>
+   </div>
+   <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+   <button class="btn purple" id="next" onclick="nextQuestion()" disabled>Келесі сұрақ →</button>
+  </div>
+ </div>
 </section>
+
+<section class="section">
+ <div class="container">
+  <div class="section-head">
+   <span class="eyebrow">МОТИВАЦИЯ</span>
+   <h2>Менің жетістіктерім 🏆</h2>
+   <p class="sub">Әр дұрыс жауап — сенің еңбегіңнің нәтижесі.</p>
+  </div>
+  <div class="badges">
+   <div class="badge"><div class="emoji">🌱</div><strong>Алғашқы қадам</strong><p>1 дұрыс жауап</p><span id="badge1">Әлі ашылмаған</span></div>
+   <div class="badge"><div class="emoji">⭐</div><strong>Зерек оқушы</strong><p>3 дұрыс жауап</p><span id="badge2">Әлі ашылмаған</span></div>
+   <div class="badge"><div class="emoji">🏆</div><strong>Білім көшбасшысы</strong><p>5 дұрыс жауап</p><span id="badge3">Әлі ашылмаған</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="access">
+ <div class="container">
+  <div class="access-panel">
+   <span class="eyebrow">ӨЗІҢЕ ЫҢҒАЙЛА</span>
+   <h2>Қолжетімділік орталығы</h2>
+   <p>Сайттың көрінісін өзіңе ыңғайлы етіп өзгерт.</p>
+   <div class="access-buttons">
+    <button onclick="changeFont(1)">A+ Қаріпті үлкейту</button>
+    <button onclick="changeFont(-1)">A− Қаріпті кішірейту</button>
+    <button onclick="toggleContrast()">◐ Жоғары контраст</button>
+    <button onclick="toggleFont()">Aa Оқуға ыңғайлы қаріп</button>
+    <button onclick="speakPage()">🔊 Мәтінді дыбыстау</button>
+    <button onclick="stopSpeak()">■ Дыбысты тоқтату</button>
+    <button onclick="resetAccess()">↻ Баптауларды қалпына келтіру</button>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
 
 <footer>
-<p>INCLUSIVE KZ © 2026</p>
-<p>Инклюзивті білім — баршаға ортақ мүмкіндік.</p>
+ <div class="container footer-row">
+  <div><div class="logo" style="color:white">INCLUSIVE <span>KZ.</span></div><p>Білім баршаға ортақ мүмкіндік.</p></div>
+  <div><strong>Инклюзивті білім беру платформасы</strong><p>© 2026 INCLUSIVE KZ</p></div>
+ </div>
 </footer>
 
 <script>
-let score = Number(localStorage.getItem("inclusiveScore")) || 0;
-
-function updateScore(){
- document.getElementById("score").textContent=score;
- let percent=Math.min(score*20,100);
- document.getElementById("progressBar").style.width=percent+"%";
- let achievement="Жақсы бастама! Жалғастыр!";
- if(score>=5) achievement="Жарайсың! Белсенді оқушы!";
- if(score>=10) achievement="Керемет! Білім көшбасшысы!";
- document.getElementById("achievement").textContent=achievement;
+function toggleMenu(){
+ document.getElementById("navlinks").classList.toggle("open");
 }
 
-function chooseClass(name){
- document.getElementById("classResult").textContent="Сен таңдаған бөлім: "+name;
+let points=Number(localStorage.getItem("ikz_points"))||0;
+let done=Number(localStorage.getItem("ikz_done"))||0;
+
+function updateProgress(){
+ document.getElementById("points").textContent=points;
+ document.getElementById("done").textContent=done;
+ document.getElementById("progress").style.width=Math.min(done*20,100)+"%";
+ document.getElementById("levelMessage").textContent=
+ done>=5?"Керемет! Сен бес тапсырманы орындадың!":
+ done>=3?"Жарайсың! Алға жылжып келесің!":
+ "Әр қадамың маңызды. Жалғастыр!";
+ document.getElementById("badge1").textContent=done>=1?"✓ Ашылды":"Әлі ашылмаған";
+ document.getElementById("badge2").textContent=done>=3?"✓ Ашылды":"Әлі ашылмаған";
+ document.getElementById("badge3").textContent=done>=5?"✓ Ашылды":"Әлі ашылмаған";
+}
+updateProgress();
+
+function saveProfile(){
+ let grade=document.getElementById("grade").value;
+ let level=document.getElementById("level").value;
+ let format=document.getElementById("format").value;
+ localStorage.setItem("ikz_grade",grade);
+ localStorage.setItem("ikz_level",level);
+ localStorage.setItem("ikz_format",format);
+ document.getElementById("profileMessage").textContent=
+ "Баптаулар сақталды: "+grade+".";
 }
 
-function checkAnswer(answer){
- if(answer===1){
-  score++;
-  localStorage.setItem("inclusiveScore",score);
-  document.getElementById("result").textContent="Дұрыс жауап! Жарайсың!";
+let questions=[
+ {q:"Компьютердің негізгі есептеу құрылғысы қайсы?",a:["Монитор","Процессор","Пернетақта"],correct:1,explain:"Процессор ақпаратты өңдейді және командаларды орындайды."},
+ {q:"Ақпаратты экранға шығаратын құрылғы?",a:["Монитор","Тінтуір","Принтер"],correct:0,explain:"Монитор ақпаратты экранда көрсетеді."},
+ {q:"Мәтін теруге арналған құрылғы?",a:["Динамик","Пернетақта","Сканер"],correct:1,explain:"Пернетақта мәтін мен командаларды енгізуге арналған."},
+ {q:"Ақпараттың ең кіші өлшем бірлігі?",a:["Бит","Метр","Литр"],correct:0,explain:"Бит — ақпараттың ең кіші өлшем бірлігі."},
+ {q:"Интернеттегі веб-бетті ашатын бағдарлама?",a:["Калькулятор","Браузер","Paint"],correct:1,explain:"Браузер веб-сайттарды ашуға көмектеседі."}
+];
+
+let current=0;
+let selected=false;
+function showQuestion(){
+ let q=questions[current];
+ document.getElementById("question").textContent=q.q;
+ document.getElementById("questionNumber").textContent=(current+1)+" / "+questions.length;
+ document.getElementById("feedback").textContent="";
+ document.getElementById("next").disabled=true;
+ selected=false;
+ let box=document.getElementById("options");
+ box.innerHTML="";
+ q.a.forEach((item,index)=>{
+  let b=document.createElement("button");
+  b.className="option";
+  b.textContent=item;
+  b.onclick=()=>answer(index);
+  box.appendChild(b);
+ });
+}
+function answer(index){
+ if(selected)return;
+ selected=true;
+ let q=questions[current];
+ let buttons=document.querySelectorAll(".option");
+ buttons[q.correct].classList.add("correct");
+ if(index===q.correct){
+  done++;
+  points+=10;
+  localStorage.setItem("ikz_done",done);
+  localStorage.setItem("ikz_points",points);
+  document.getElementById("feedback").textContent="✓ Дұрыс! "+q.explain;
  }else{
-  document.getElementById("result").textContent="Қайта ойланып көр. Тағы бір рет таңда!";
+  buttons[index].classList.add("wrong");
+  document.getElementById("feedback").textContent="Қателесу — үйренудің бір бөлігі. "+q.explain;
  }
- updateScore();
+ updateProgress();
+ document.getElementById("next").disabled=false;
+}
+function nextQuestion(){
+ current++;
+ if(current>=questions.length){
+  current=0;
+  document.getElementById("question").textContent="🎉 Тамаша! Сен барлық сұрақты аяқтадың!";
+  document.getElementById("questionNumber").textContent="Аяқталды";
+  document.getElementById("options").innerHTML='<button class="btn" onclick="showQuestion()">Қайта бастау</button>';
+  document.getElementById("feedback").textContent="Жинаған ұпайың: "+points;
+  document.getElementById("next").disabled=true;
+  return;
+ }
+ showQuestion();
 }
 
 let fontSize=16;
-function changeFont(value){
- fontSize+=value;
- if(fontSize<12)fontSize=12;
- if(fontSize>26)fontSize=26;
+function changeFont(amount){
+ fontSize=Math.max(13,Math.min(25,fontSize+amount));
  document.body.style.fontSize=fontSize+"px";
 }
-
 function toggleContrast(){
  document.body.classList.toggle("high-contrast");
 }
-
-function readText(){
- let text=document.querySelector(".hero").innerText;
+function toggleFont(){
+ document.body.classList.toggle("easy-font");
+}
+function resetAccess(){
+ fontSize=16;
+ document.body.style.fontSize="";
+ document.body.classList.remove("high-contrast","easy-font","large-text");
+ stopSpeak();
+}
+function speakPage(){
+ if(!("speechSynthesis" in window)){
+  alert("Бұл браузерде дыбыстау қолжетімсіз.");
+  return;
+ }
+ speechSynthesis.cancel();
+ let text=document.querySelector("main").innerText;
  let speech=new SpeechSynthesisUtterance(text);
  speech.lang="kk-KZ";
- speechSynthesis.cancel();
+ speech.rate=0.85;
  speechSynthesis.speak(speech);
 }
-
-function stopReading(){
- speechSynthesis.cancel();
+function stopSpeak(){
+ if("speechSynthesis" in window)speechSynthesis.cancel();
 }
-
-function resetScore(){
- score=0;
- localStorage.setItem("inclusiveScore",0);
- updateScore();
-}
-
-updateScore();
+showQuestion();
 </script>
 </body>
 </html>
